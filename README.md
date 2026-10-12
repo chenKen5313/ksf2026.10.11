@@ -1,6 +1,8 @@
 # Travel Atlas｜旅途地图
 
-[打开贵州五日行程与美食攻略](https://guizhou-five-days-chenken5313.luluqie54.chatgpt.site) — 公开网页，可直接分享给朋友查看。
+[打开 GitHub Pages 版攻略](https://chenken5313.github.io/ksf2026.10.11/) — 公开网页，可直接分享给朋友查看。国内网络的访问效果需实际测试。
+
+[Sites 备用地址](https://guizhou-five-days-chenken5313.luluqie54.chatgpt.site)
 
 贵州五日旅行的简洁浏览页。打开后即可查看全部行程，也可点 Day 1—Day 5 只看某一天。Day 4 可在市区休闲与“市区＋马岭河峡谷”两条方案之间切换。生成的 `outputs/Travel-Atlas-行程单.html` 可直接双击打开并分享，无需安装软件或配置。
 
@@ -9,6 +11,8 @@
 新增独立的“对应行程的美食推荐”区域。Day 1 楼脚酸汤牛肉；Day 2 韦记布依特色酸笋鱼；Day 3–4 贵丰牛魔王、江氏糯香园、古镇排骨；Day 5 冉林禾牛肉粉。按天查看行程时，美食区域同步筛选；每天的“查看当天美食”可直接跳转。12 张用户提供的店铺与实拍截图完整保留，可点击放大、切换图片。评分、营业时间、人均消费均按用户截图记录。
 
 ## 本地打开
+
+GitHub Pages 由 `.github/workflows/pages.yml` 自动发布，每次更新 main 分支后会重新构建。发布时使用 `/ksf2026.10.11/` 作为路径前缀。
 
 ```bash
 npm install

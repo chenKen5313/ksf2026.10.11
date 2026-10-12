@@ -23,12 +23,12 @@ export default function FoodSection({ day }: { day: 'all' | DayNo }) {
         <p className="food-note">{spot.note}</p>
         <div className="food-address"><MapPin size={15}/><span>{spot.address}</span></div><p className="food-hours">截图营业时间：{spot.hours}</p>
         </div>
-        <div className="food-photos">{spot.photos.map((photo, index) => <button key={photo.file} onClick={() => setGallery({ spot, index })} aria-label={`放大查看${spot.name}的${photo.label}`}><img src={`/images/food/${photo.file}`} alt={`${spot.name} · ${photo.label}`} loading="lazy"/><span>{photo.label} <span aria-hidden="true">↗</span></span></button>)}</div>
+        <div className="food-photos">{spot.photos.map((photo, index) => <button key={photo.file} onClick={() => setGallery({ spot, index })} aria-label={`放大查看${spot.name}的${photo.label}`}><img src={`${import.meta.env.BASE_URL}images/food/${photo.file}`} alt={`${spot.name} · ${photo.label}`} loading="lazy"/><span>{photo.label} <span aria-hidden="true">↗</span></span></button>)}</div>
       </article>)}</div>
     </div>)}
     {gallery && <dialog className="food-gallery" ref={dialog} onClose={() => setGallery(null)} onClick={event => { if (event.target === event.currentTarget) closeGallery(); }} aria-label={`${gallery.spot.name}图片查看器`}>
       <div className="gallery-header"><div><strong>{gallery.spot.name}</strong><span>{gallery.spot.photos[gallery.index].label} · {gallery.index + 1} / {gallery.spot.photos.length}</span></div><button onClick={closeGallery} aria-label="关闭图片"><X size={22}/></button></div>
-      <img className="gallery-image" src={`/images/food/${gallery.spot.photos[gallery.index].file}`} alt={`${gallery.spot.name} · ${gallery.spot.photos[gallery.index].label}`}/>
+      <img className="gallery-image" src={`${import.meta.env.BASE_URL}images/food/${gallery.spot.photos[gallery.index].file}`} alt={`${gallery.spot.name} · ${gallery.spot.photos[gallery.index].label}`}/>
       {gallery.spot.photos.length > 1 && <div className="gallery-nav"><button disabled={gallery.index === 0} onClick={() => setGallery({ ...gallery, index: gallery.index - 1 })}><ChevronLeft size={18}/> 上一张</button><button disabled={gallery.index === gallery.spot.photos.length - 1} onClick={() => setGallery({ ...gallery, index: gallery.index + 1 })}>下一张 <ChevronRight size={18}/></button></div>}
     </dialog>}
   </section>;
