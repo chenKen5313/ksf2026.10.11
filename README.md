@@ -1,6 +1,6 @@
 # Travel Atlas｜旅途地图
 
-贵州五日旅行的简洁浏览页。打开后即可查看全部行程，也可点 Day 1—Day 5 只看某一天。Day 4 可在市区休闲与“市区＋马岭河峡谷”两条方案之间切换。`outputs/Travel-Atlas-行程单.html` 可直接双击打开并分享，无需安装软件或配置。
+贵州五日旅行的简洁浏览页。打开后即可查看全部行程，也可点 Day 1—Day 5 只看某一天。Day 4 可在市区休闲与“市区＋马岭河峡谷”两条方案之间切换。生成的 `outputs/Travel-Atlas-行程单.html` 可直接双击打开并分享，无需安装软件或配置。
 
 页面中直接内嵌了本地照片与路线示意图，不需要地图 Key、账号、配置页面或外部地图链接。路线图片仅说明“贵阳 → 兴义 → 贵阳”的行程顺序，不是导航地图。
 
@@ -15,7 +15,7 @@ npm run dev
 
 浏览器打开终端提示的本地地址，通常为 `http://localhost:5173/`。构建检查：`npm run build`。
 
-运行 `python scripts/build_standalone.py` 可将构建后的代码与所有本地图片内嵌到 `outputs/Travel-Atlas-行程单.html`，便于分享。
+先运行 `npm run build`，再运行 `python scripts/build_standalone.py`，可将构建后的代码与所有本地图片内嵌到 `outputs/Travel-Atlas-行程单.html`，便于分享。生成文件约 21 MB，按需在本地生成；仓库包含完整源码和图片。
 
 ## 内容原则
 
