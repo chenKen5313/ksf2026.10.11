@@ -1,0 +1,16 @@
+export type Status = 'confirmed' | 'pending';
+export type Category = '景点' | '美食' | '住宿' | '交通' | '摄影' | '其他';
+export type DayNo = 1 | 2 | 3 | 4 | 5;
+export type SourceInfo = { source?: string; updatedAt?: string; status: Status };
+export type Trip = { id: string; title: string; startDate: string; budget: number; notes: string };
+export type TripDay = { id: string; day: DayNo; title: string; city: string; mode: string; variant?: 'A' | 'B' };
+export type Place = { id: string; name: string; city: string; category: Category; description: string; address: string; lng: number | null; lat: number | null; image?: string; source: SourceInfo; favorite?: boolean };
+export type Activity = { id: string; day: DayNo; title: string; placeId?: string; start: string; end: string; duration: string; transport: string; budget: number; notes: string; done: boolean; order: number; variant?: 'A' | 'B' | 'both'; status: Status; image?: string };
+export type Accommodation = { id: string; name: string; address: string; checkIn: string; checkOut: string; booking: string; notes: string; day: DayNo; status: Status; placeId?: string };
+export type Transportation = { id: string; day: DayNo; mode: string; from: string; to: string; number: string; depart: string; arrive: string; cost: number; booking: string; notes: string; status: Status };
+export type Restaurant = { id: string; name: string; city: string; placeId?: string; average: number | null; dishes: string; spicy: number; sour: number; salty: number; umami: number; oily: number; localFlavor: boolean; pairing: string; review: string; reviewType: string; source: SourceInfo; favorite: boolean };
+export type Dish = { id: string; name: string; city: string; description: string; spicy: number; sour: number; source: SourceInfo };
+export type Expense = { id: string; day: DayNo; category: '住宿' | '交通' | '餐饮' | '门票' | '其他'; amount: number; note: string; date: string };
+export type PackingItem = { id: string; category: string; name: string; packed: boolean };
+export type TravelNote = { id: string; title: string; content: string; category: string };
+export type AtlasData = { trip: Trip; days: TripDay[]; places: Place[]; activities: Activity[]; accommodations: Accommodation[]; transportations: Transportation[]; restaurants: Restaurant[]; dishes: Dish[]; expenses: Expense[]; packing: PackingItem[]; notes: TravelNote[] };

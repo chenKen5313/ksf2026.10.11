@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.env.local
+.env.*.local
+*.log
+*.tsbuildinfo
+work/
+outputs/*
+!outputs/Travel-Atlas-行程单.html
